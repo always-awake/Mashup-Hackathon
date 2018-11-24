@@ -6,4 +6,4 @@ class User(AbstractUser):
 
     """ User Model """
 
-    name = models.CharField(_("Name of User"), blank=True, max_length=255)
+    name = models.CharField("Name of User", blank=True, max_length=255)
