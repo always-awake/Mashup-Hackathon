@@ -8,6 +8,9 @@ RUN         apt -y update &&\
             # build-essential - uWSGI를 설치하기 위해 필요한 빌드용 패키지
             apt -y install nginx supervisor build-essential
 
+# WSGI모듈 설치
+RUN         pip3 install uwsgi
+
 # 로컬의 requirements를 이미지의 /tmp/경로에 복사
 COPY        ./requirements.txt  /tmp/requirements.txt
 # /tmp/requirements.txt에 기록된 내용을 이미지에 설치
