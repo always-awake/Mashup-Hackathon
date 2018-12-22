@@ -19,6 +19,13 @@ RUN         pip3 install -r /tmp/requirements.txt
 # 소스코드를 복사
 COPY        .   /srv/project/
 
-# docker run으로 이 이미지를 사용해 컨테이너가 생성되었을 때, 자동으로 실행할 커맨드
-# nginx를 daemon이 아닌, foreground상태로 실행
-CMD         nginx -g 'daemon off;'
+# Nginx설정파일 복사 및 기본 Nginx설정 삭제
+RUN         cp -f   /srv/project/.config/app.conf \
+                    /etc/nginx/sites-enabled/ && \
+            rm      /etc/nginx/sites-enabled/default
+
+
+# 두개의 프로세스를 실행해야 함
+# docker run .... nginx -g 'daemon off;'
+# docker exec ... uwsgi --ini /srv/project/.config/uwsgi.ini
+CMD         nginx && uwsgi --ini /srv/project/.config/uwsgi.ini
