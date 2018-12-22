@@ -13,3 +13,6 @@ COPY        ./requirements.txt  /tmp/requirements.txt
 # /tmp/requirements.txt에 기록된 내용을 이미지에 설치
 RUN         pip3 install -r /tmp/requirements.txt
 
+# docker run으로 이 이미지를 사용해 컨테이너가 생성되었을 때, 자동으로 실행할 커맨드
+# nginx를 daemon이 아닌, foreground상태로 실행
+CMD         nginx -g 'daemon off;'
