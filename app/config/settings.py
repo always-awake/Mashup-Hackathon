@@ -31,7 +31,7 @@ SECRET_KEY = 'h3a_31!p)!6qqe=3-&56t8%z6j3svui*0e6lps1kd-49)qe^nd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whitenoise-mashup.ga']
 
 AUTH_USER_MODEL = 'users.User' 
 
