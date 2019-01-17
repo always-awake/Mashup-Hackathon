@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'sources' #  sources app
     'tracks', # tracks app
     'users', # users app
 ]
