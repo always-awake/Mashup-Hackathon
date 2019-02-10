@@ -26,7 +26,7 @@ class Track(TimeStampedModel):
     @property
     def like_count(self):
         # Track인스턴스의 속성이므로 property명에서 'track_'은 빼도 될 것 같음
-        return self.track_likes.count()
+        return self.tracklikes.count()
 
     def __str__(self):
         # f-string을 써보자
@@ -34,19 +34,19 @@ class Track(TimeStampedModel):
 
 
 # 클래스명에는 언더스코어 사용안함
-class Track_Like(models.Model):
+class TrackLike(models.Model):
     """ Track Like Model """
     creator = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         null=True,
-        related_name='track_likes'
+        related_name='tracklikes'
     )
     track = models.ForeignKey(
         Track,
         on_delete=models.CASCADE,
         null=True,
-        related_name='track_likes'
+        related_name='trackikes'
     )
 
     def __str__(self):
