@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from tracks.models import TimeStampedModel
+from app.tracks.models import TimeStampedModel
 
 
 class Source(TimeStampedModel):
@@ -13,9 +13,7 @@ class Source(TimeStampedModel):
         null=True,
         related_name='sources'
     )
-    # 각 소스의 고유 이미지
     image = models.ImageField(upload_to='sources/images')
-    # 트랙 내 유저가 저장한 소스 볼륨
     volume = models.IntegerField()
 
     @property
@@ -28,7 +26,7 @@ class Source(TimeStampedModel):
 
 class SourceLike(models.Model):
     """ Source Like Model """
-    creator = models.ForeignKey(
+    user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         null=True,
@@ -42,4 +40,4 @@ class SourceLike(models.Model):
     )
 
     def __str__(self):
-        return f'Liked Source: {self.source.title}'
+        return f'{self.source.title} - {self.source.user}'
