@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from app.tracks.models import TimeStampedModel
+from tracks.models import TimeStampedModel
 
 
 class Source(TimeStampedModel):
