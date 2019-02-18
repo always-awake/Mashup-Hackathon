@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 주석은 위에달기 (오른쪽에 달지않음)
+    #sources app
     'sources',
-    'tracks', # tracks app
-    'users', # users app
+    # tracks app
+    'tracks',
+    # users app
+    'users',
 ]
 
 MIDDLEWARE = [
