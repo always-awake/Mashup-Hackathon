@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7beb7275f3eb501db8025458e0089c1e11a75a5ac45c2cba0c83312f8e90afc2"
+            "sha256": "2a29d826c04b9d6b0b43022b907cbef7a6cb51789c282346a19d3775ff3e1738"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -31,7 +31,11 @@
     "default": {
         "django": {
             "hashes": [],
-            "version": "==2.1.5"
+            "version": "==2.1.7"
+        },
+        "djangorestframework": {
+            "hashes": [],
+            "version": "==3.9.1"
         },
         "pillow": {
             "hashes": [],
