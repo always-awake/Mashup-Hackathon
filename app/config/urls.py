@@ -21,14 +21,14 @@ from django.urls import include,path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    #tracks urls
+
+    # tracks urls
     path(
         "tracks/",
         include("tracks.urls", namespace="tracks")
     ),
 
-    #users urls
+    # users urls
     path(
         "users/",
         include("users.urls", namespace="users")
