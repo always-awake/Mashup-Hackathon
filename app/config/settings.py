@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['whitenoise-mashup.ga']
 
-AUTH_USER_MODEL = 'users.User' 
+AUTH_USER_MODEL = 'users.User'
 
 
 # Application definition
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #sources app
+    # sources app
     'sources',
     # tracks app
     'tracks',
