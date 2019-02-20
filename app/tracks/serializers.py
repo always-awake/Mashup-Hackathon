@@ -1,18 +1,17 @@
 from rest_framework import serializers
-from . import models
+
+from .models import Track
 
 
 class TrackSerializer(serializers.ModelSerializer):
-
     class Meta:
-        model = models.Track
+        model = Track
         fields = '__all__'
 
 
 class TrackCreateSerializer(serializers.ModelSerializer):
-
     class Meta:
-        model = models.Track
+        model = Track
         fields = (
             'title',
             'track',
