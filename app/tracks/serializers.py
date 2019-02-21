@@ -6,7 +6,14 @@ from .models import Track
 class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
-        fields = '__all__'
+        fields = (
+            'id',
+            'created_at',
+            'title',
+            'track',
+            'creator',
+            'like_count',
+        )
 
 
 class TrackCreateSerializer(serializers.ModelSerializer):
