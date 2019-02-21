@@ -24,10 +24,10 @@ class Track(TimeStampedModel):
 
     @property
     def like_count(self):
-        return self.tracklikes.count()
+        return self.tracklikes.all().count()
 
     def __str__(self):
-        return f'{self.title} - {self.creator.name}'
+        return f'{self.title} - {self.creator.username}'
 
 
 class TrackLike(models.Model):
@@ -42,8 +42,8 @@ class TrackLike(models.Model):
         Track,
         on_delete=models.CASCADE,
         null=True,
-        related_name='trackikes'
+        related_name='tracklikes'
     )
 
     def __str__(self):
-        return f'{self.track.title} - {self.track.user}'
+        return f'{self.track.title} - {self.track.creator}'
